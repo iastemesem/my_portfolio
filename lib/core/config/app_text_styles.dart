@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
 
 class AppTextStyles {
   AppTextStyles._();
 
+  ///base
+  static final TextStyle _baseTextStyle = GoogleFonts.dosis();
+
   ///bold
-  static TextStyle boldTextStyle = const TextStyle(
+  static TextStyle boldTextStyle = _baseTextStyle.copyWith(
     height: 0,
     color: AppColors.secondary,
     fontWeight: FontWeight.w700,
@@ -21,7 +25,7 @@ class AppTextStyles {
       );
 
   ///regular
-  static TextStyle regularTextStyle = const TextStyle(
+  static TextStyle regularTextStyle = _baseTextStyle.copyWith(
     height: 0,
     color: AppColors.secondary,
     fontStyle: FontStyle.normal,
@@ -37,7 +41,7 @@ class AppTextStyles {
       );
 
   ///italic
-  static TextStyle italicTextStyle = const TextStyle(
+  static TextStyle italicTextStyle = _baseTextStyle.copyWith(
     height: 0,
     color: AppColors.secondary,
     fontStyle: FontStyle.italic,
