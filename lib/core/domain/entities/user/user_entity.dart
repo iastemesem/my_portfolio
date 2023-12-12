@@ -16,6 +16,7 @@ class UserInfoEntity with _$UserInfoEntity {
     required String mail,
     required String briefDescription,
     required String longDescription,
+    required String profileImgUrl,
     required List<UserProjectEntity> projects,
     required List<UserSkillEntity> skills,
     required List<UserContactEntity> contacts,

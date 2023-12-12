@@ -19,7 +19,7 @@ class AppLoader extends StatelessWidget {
     showDialog(
       context: context,
       useRootNavigator: true,
-      barrierColor: Colors.transparent,
+      barrierColor: Colors.grey.withOpacity(0.8),
       barrierDismissible: false,
       builder: (context) => AppLoader(
         key: key,
@@ -40,10 +40,8 @@ class AppLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return LottieBuilder.asset(
       AppAssets.loader,
-      height: 100,
       animate: true,
       repeat: true,
-      width: 100,
       options: LottieOptions(enableApplyingOpacityToLayers: true),
     );
   }

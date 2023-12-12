@@ -5,7 +5,8 @@ import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
 
 class AppNavigationDrawer extends StatelessWidget {
-  const AppNavigationDrawer({super.key});
+  final VoidCallback? onAboutPressed;
+  const AppNavigationDrawer({super.key, this.onAboutPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,10 @@ class AppNavigationDrawer extends StatelessWidget {
                     ],
                   ),*/
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      onAboutPressed?.call();
+                      Navigator.of(context).pop();
+                    },
                     child: AppText(
                       content: 'about'.i18n(),
                       textStyle: AppTextStyles.boldTextStyle.copyWith(

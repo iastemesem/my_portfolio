@@ -13,6 +13,7 @@ class UserInfoMapper extends Mapper<UserInfoResponse, UserInfoEntity> {
       mail: data.mail,
       briefDescription: data.briefDescription,
       longDescription: data.longDescription,
+      profileImgUrl: data.profileImgUrl,
       projects: data.projects.map(
         (project) {
           return UserProjectsMapper().apply(project);

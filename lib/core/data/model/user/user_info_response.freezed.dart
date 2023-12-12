@@ -29,6 +29,7 @@ mixin _$UserInfoResponse {
   String get mail => throw _privateConstructorUsedError;
   String get briefDescription => throw _privateConstructorUsedError;
   String get longDescription => throw _privateConstructorUsedError;
+  String get profileImgUrl => throw _privateConstructorUsedError;
   List<UserProjectResponse> get projects => throw _privateConstructorUsedError;
   List<UserSkillResponse> get skills => throw _privateConstructorUsedError;
   List<UserContactResponse> get contacts => throw _privateConstructorUsedError;
@@ -47,6 +48,7 @@ class _$UserInfoResponseImpl implements _UserInfoResponse {
       this.mail = '',
       this.briefDescription = '',
       this.longDescription = '',
+      this.profileImgUrl = '',
       final List<UserProjectResponse> projects = const [],
       final List<UserSkillResponse> skills = const [],
       final List<UserContactResponse> contacts = const []})
@@ -84,6 +86,9 @@ class _$UserInfoResponseImpl implements _UserInfoResponse {
   @override
   @JsonKey()
   final String longDescription;
+  @override
+  @JsonKey()
+  final String profileImgUrl;
   final List<UserProjectResponse> _projects;
   @override
   @JsonKey()
@@ -113,7 +118,7 @@ class _$UserInfoResponseImpl implements _UserInfoResponse {
 
   @override
   String toString() {
-    return 'UserInfoResponse(name: $name, surname: $surname, age: $age, birthdayDate: $birthdayDate, address: $address, phone: $phone, mail: $mail, briefDescription: $briefDescription, longDescription: $longDescription, projects: $projects, skills: $skills, contacts: $contacts)';
+    return 'UserInfoResponse(name: $name, surname: $surname, age: $age, birthdayDate: $birthdayDate, address: $address, phone: $phone, mail: $mail, briefDescription: $briefDescription, longDescription: $longDescription, profileImgUrl: $profileImgUrl, projects: $projects, skills: $skills, contacts: $contacts)';
   }
 
   @override
@@ -133,6 +138,8 @@ class _$UserInfoResponseImpl implements _UserInfoResponse {
                 other.briefDescription == briefDescription) &&
             (identical(other.longDescription, longDescription) ||
                 other.longDescription == longDescription) &&
+            (identical(other.profileImgUrl, profileImgUrl) ||
+                other.profileImgUrl == profileImgUrl) &&
             const DeepCollectionEquality().equals(other._projects, _projects) &&
             const DeepCollectionEquality().equals(other._skills, _skills) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts));
@@ -151,6 +158,7 @@ class _$UserInfoResponseImpl implements _UserInfoResponse {
       mail,
       briefDescription,
       longDescription,
+      profileImgUrl,
       const DeepCollectionEquality().hash(_projects),
       const DeepCollectionEquality().hash(_skills),
       const DeepCollectionEquality().hash(_contacts));
@@ -167,6 +175,7 @@ abstract class _UserInfoResponse implements UserInfoResponse {
       final String mail,
       final String briefDescription,
       final String longDescription,
+      final String profileImgUrl,
       final List<UserProjectResponse> projects,
       final List<UserSkillResponse> skills,
       final List<UserContactResponse> contacts}) = _$UserInfoResponseImpl;
@@ -192,6 +201,8 @@ abstract class _UserInfoResponse implements UserInfoResponse {
   String get briefDescription;
   @override
   String get longDescription;
+  @override
+  String get profileImgUrl;
   @override
   List<UserProjectResponse> get projects;
   @override

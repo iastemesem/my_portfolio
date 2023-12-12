@@ -23,6 +23,7 @@ mixin _$UserInfoEntity {
   String get mail => throw _privateConstructorUsedError;
   String get briefDescription => throw _privateConstructorUsedError;
   String get longDescription => throw _privateConstructorUsedError;
+  String get profileImgUrl => throw _privateConstructorUsedError;
   List<UserProjectEntity> get projects => throw _privateConstructorUsedError;
   List<UserSkillEntity> get skills => throw _privateConstructorUsedError;
   List<UserContactEntity> get contacts => throw _privateConstructorUsedError;
@@ -46,6 +47,7 @@ abstract class $UserInfoEntityCopyWith<$Res> {
       String mail,
       String briefDescription,
       String longDescription,
+      String profileImgUrl,
       List<UserProjectEntity> projects,
       List<UserSkillEntity> skills,
       List<UserContactEntity> contacts});
@@ -71,6 +73,7 @@ class _$UserInfoEntityCopyWithImpl<$Res, $Val extends UserInfoEntity>
     Object? mail = null,
     Object? briefDescription = null,
     Object? longDescription = null,
+    Object? profileImgUrl = null,
     Object? projects = null,
     Object? skills = null,
     Object? contacts = null,
@@ -104,6 +107,10 @@ class _$UserInfoEntityCopyWithImpl<$Res, $Val extends UserInfoEntity>
           ? _value.longDescription
           : longDescription // ignore: cast_nullable_to_non_nullable
               as String,
+      profileImgUrl: null == profileImgUrl
+          ? _value.profileImgUrl
+          : profileImgUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       projects: null == projects
           ? _value.projects
           : projects // ignore: cast_nullable_to_non_nullable
@@ -136,6 +143,7 @@ abstract class _$$UserInfoEntityImplCopyWith<$Res>
       String mail,
       String briefDescription,
       String longDescription,
+      String profileImgUrl,
       List<UserProjectEntity> projects,
       List<UserSkillEntity> skills,
       List<UserContactEntity> contacts});
@@ -159,6 +167,7 @@ class __$$UserInfoEntityImplCopyWithImpl<$Res>
     Object? mail = null,
     Object? briefDescription = null,
     Object? longDescription = null,
+    Object? profileImgUrl = null,
     Object? projects = null,
     Object? skills = null,
     Object? contacts = null,
@@ -192,6 +201,10 @@ class __$$UserInfoEntityImplCopyWithImpl<$Res>
           ? _value.longDescription
           : longDescription // ignore: cast_nullable_to_non_nullable
               as String,
+      profileImgUrl: null == profileImgUrl
+          ? _value.profileImgUrl
+          : profileImgUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       projects: null == projects
           ? _value._projects
           : projects // ignore: cast_nullable_to_non_nullable
@@ -219,6 +232,7 @@ class _$UserInfoEntityImpl implements _UserInfoEntity {
       required this.mail,
       required this.briefDescription,
       required this.longDescription,
+      required this.profileImgUrl,
       required final List<UserProjectEntity> projects,
       required final List<UserSkillEntity> skills,
       required final List<UserContactEntity> contacts})
@@ -240,6 +254,8 @@ class _$UserInfoEntityImpl implements _UserInfoEntity {
   final String briefDescription;
   @override
   final String longDescription;
+  @override
+  final String profileImgUrl;
   final List<UserProjectEntity> _projects;
   @override
   List<UserProjectEntity> get projects {
@@ -266,7 +282,7 @@ class _$UserInfoEntityImpl implements _UserInfoEntity {
 
   @override
   String toString() {
-    return 'UserInfoEntity(name: $name, surname: $surname, age: $age, phone: $phone, mail: $mail, briefDescription: $briefDescription, longDescription: $longDescription, projects: $projects, skills: $skills, contacts: $contacts)';
+    return 'UserInfoEntity(name: $name, surname: $surname, age: $age, phone: $phone, mail: $mail, briefDescription: $briefDescription, longDescription: $longDescription, profileImgUrl: $profileImgUrl, projects: $projects, skills: $skills, contacts: $contacts)';
   }
 
   @override
@@ -283,6 +299,8 @@ class _$UserInfoEntityImpl implements _UserInfoEntity {
                 other.briefDescription == briefDescription) &&
             (identical(other.longDescription, longDescription) ||
                 other.longDescription == longDescription) &&
+            (identical(other.profileImgUrl, profileImgUrl) ||
+                other.profileImgUrl == profileImgUrl) &&
             const DeepCollectionEquality().equals(other._projects, _projects) &&
             const DeepCollectionEquality().equals(other._skills, _skills) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts));
@@ -298,6 +316,7 @@ class _$UserInfoEntityImpl implements _UserInfoEntity {
       mail,
       briefDescription,
       longDescription,
+      profileImgUrl,
       const DeepCollectionEquality().hash(_projects),
       const DeepCollectionEquality().hash(_skills),
       const DeepCollectionEquality().hash(_contacts));
@@ -319,6 +338,7 @@ abstract class _UserInfoEntity implements UserInfoEntity {
       required final String mail,
       required final String briefDescription,
       required final String longDescription,
+      required final String profileImgUrl,
       required final List<UserProjectEntity> projects,
       required final List<UserSkillEntity> skills,
       required final List<UserContactEntity> contacts}) = _$UserInfoEntityImpl;
@@ -337,6 +357,8 @@ abstract class _UserInfoEntity implements UserInfoEntity {
   String get briefDescription;
   @override
   String get longDescription;
+  @override
+  String get profileImgUrl;
   @override
   List<UserProjectEntity> get projects;
   @override

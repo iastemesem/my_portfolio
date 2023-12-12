@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
+import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
 
 class AppButton extends StatelessWidget {
@@ -9,12 +10,12 @@ class AppButton extends StatelessWidget {
   final String text;
 
   const AppButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.onLongPressed,
     this.backgroundColor,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,10 @@ class AppButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(8.0),
           ),
           elevation: 0,
-          backgroundColor: backgroundColor ?? AppColors.tertiary,
+          backgroundColor: backgroundColor ?? AppColors.accent,
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -41,6 +42,9 @@ class AppButton extends StatelessWidget {
           ),
           child: AppText(
             content: text,
+            textStyle: AppTextStyles.boldTextStyle.copyWith(
+              fontSize: 22,
+            ),
           ),
         ),
       ),

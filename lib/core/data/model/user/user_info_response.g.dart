@@ -18,6 +18,7 @@ _$UserInfoResponseImpl _$$UserInfoResponseImplFromJson(
       mail: json['mail'] as String? ?? '',
       briefDescription: json['briefDescription'] as String? ?? '',
       longDescription: json['longDescription'] as String? ?? '',
+      profileImgUrl: json['profileImgUrl'] as String? ?? '',
       projects: (json['projects'] as List<dynamic>?)
               ?.map((e) =>
                   UserProjectResponse.fromJson(e as Map<String, dynamic>))

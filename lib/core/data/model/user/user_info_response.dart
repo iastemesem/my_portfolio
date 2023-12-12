@@ -15,6 +15,7 @@ class UserInfoResponse with _$UserInfoResponse {
     @Default('') String mail,
     @Default('') String briefDescription,
     @Default('') String longDescription,
+    @Default('') String profileImgUrl,
     @Default([]) List<UserProjectResponse> projects,
     @Default([]) List<UserSkillResponse> skills,
     @Default([]) List<UserContactResponse> contacts,

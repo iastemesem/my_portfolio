@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 
+import '../../../feature/about/presentation/pages/about_page.dart';
 import '../../../feature/home/presentation/pages/home_page.dart';
+import '../../domain/entities/user/user_entity.dart';
 
 part 'app_router.gr.dart';
 
@@ -11,7 +14,11 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: HomeRoute.page,
           initial: true,
-          children: const [],
+          children: [],
+        ),
+        CustomRoute(
+          page: AboutRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];
 }
