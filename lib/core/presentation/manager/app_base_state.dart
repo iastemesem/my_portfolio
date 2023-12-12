@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:my_portfolio/core/data/entities/failure_entity.dart';
+
+import '../../domain/entities/failure_entity.dart';
 
 part 'app_base_state.freezed.dart';
 

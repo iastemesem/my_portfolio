@@ -1,3 +1,6 @@
 class AppConstants {
-  static String BASE_URL_ENVIRONMENT_KEY = 'BASE_URL_ENVIRONMENT';
+  static const String baseUrlEnvironmentKey = 'APP_BASE_URL';
+  static const String userInfoEnvironmentKey = 'USER_INFO_EP';
+  static const String userInfoRepositoryInstanceName = "userInfoRepositoryImpl";
+  static const int successfulResponseCode = 200;
 }
