@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
 import 'package:my_portfolio/core/config/app_constants.dart';
 import 'package:my_portfolio/core/config/app_text_styles.dart';
@@ -65,14 +66,14 @@ class ContactsBodyWidget extends StatelessWidget {
         child: Column(
           children: [
             _buildItemCardWidget(
-              'Call me',
+              'callMe'.i18n(),
               userInfoEntity.phone,
               FontAwesomeIcons.phone,
               AppColors.accent,
               Uri(scheme: 'tel', path: userInfoEntity.phone),
             ),
             _buildItemCardWidget(
-              'Mail me',
+              'mailMe'.i18n(),
               userInfoEntity.mail,
               FontAwesomeIcons.reply,
               AppColors.accent,

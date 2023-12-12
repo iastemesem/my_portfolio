@@ -33,16 +33,18 @@ class ContactsPage extends StatelessWidget {
         ),
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.primary,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 24.0, top: 15),
-          child: InkWell(
-            onTap: () => context.router.pop(),
-            child: const FaIcon(
-              FontAwesomeIcons.circleArrowLeft,
-              color: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0, top: 15),
+            child: InkWell(
+              onTap: () => context.router.pop(),
+              child: const FaIcon(
+                FontAwesomeIcons.circleXmark,
+                color: Colors.white,
+              ),
             ),
           ),
-        ),
+        ],
       ),
       body: ContactsBodyWidget(
         userInfoEntity: userInfoEntity,

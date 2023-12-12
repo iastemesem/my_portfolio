@@ -15,7 +15,6 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: HomeRoute.page,
           initial: true,
-          children: [],
         ),
         CustomRoute(
           page: AboutRoute.page,
@@ -23,7 +22,7 @@ class AppRouter extends _$AppRouter {
         ),
         CustomRoute(
           page: ContactsRoute.page,
-          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: TransitionsBuilders.zoomIn,
         ),
       ];
 }

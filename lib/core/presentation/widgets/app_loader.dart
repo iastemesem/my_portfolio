@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_portfolio/core/config/app_assets.dart';
+import 'package:my_portfolio/core/config/app_colors.dart';
 
 class AppLoader extends StatelessWidget {
   const AppLoader({super.key});
@@ -19,7 +20,7 @@ class AppLoader extends StatelessWidget {
     showDialog(
       context: context,
       useRootNavigator: true,
-      barrierColor: Colors.grey.withOpacity(0.8),
+      barrierColor: AppColors.gray.withOpacity(0.2),
       barrierDismissible: false,
       builder: (context) => AppLoader(
         key: key,
