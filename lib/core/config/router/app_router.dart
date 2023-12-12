@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../feature/about/presentation/pages/about_page.dart';
+import '../../../feature/contacts/presentation/pages/contacts_page.dart';
 import '../../../feature/home/presentation/pages/home_page.dart';
 import '../../domain/entities/user/user_entity.dart';
 
@@ -18,6 +19,10 @@ class AppRouter extends _$AppRouter {
         ),
         CustomRoute(
           page: AboutRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: ContactsRoute.page,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];

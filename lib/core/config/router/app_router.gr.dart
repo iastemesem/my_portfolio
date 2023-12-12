@@ -25,6 +25,16 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    ContactsRoute.name: (routeData) {
+      final args = routeData.argsAs<ContactsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ContactsPage(
+          key: args.key,
+          userInfoEntity: args.userInfoEntity,
+        ),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -68,6 +78,44 @@ class AboutRouteArgs {
   @override
   String toString() {
     return 'AboutRouteArgs{key: $key, userInfoEntity: $userInfoEntity}';
+  }
+}
+
+/// generated route for
+/// [ContactsPage]
+class ContactsRoute extends PageRouteInfo<ContactsRouteArgs> {
+  ContactsRoute({
+    Key? key,
+    required UserInfoEntity userInfoEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ContactsRoute.name,
+          args: ContactsRouteArgs(
+            key: key,
+            userInfoEntity: userInfoEntity,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ContactsRoute';
+
+  static const PageInfo<ContactsRouteArgs> page =
+      PageInfo<ContactsRouteArgs>(name);
+}
+
+class ContactsRouteArgs {
+  const ContactsRouteArgs({
+    this.key,
+    required this.userInfoEntity,
+  });
+
+  final Key? key;
+
+  final UserInfoEntity userInfoEntity;
+
+  @override
+  String toString() {
+    return 'ContactsRouteArgs{key: $key, userInfoEntity: $userInfoEntity}';
   }
 }
 

@@ -6,7 +6,13 @@ import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
 
 class AppNavigationDrawer extends StatelessWidget {
   final VoidCallback? onAboutPressed;
-  const AppNavigationDrawer({super.key, this.onAboutPressed});
+  final VoidCallback? onContactsPressed;
+
+  const AppNavigationDrawer({
+    super.key,
+    this.onAboutPressed,
+    this.onContactsPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +90,10 @@ class AppNavigationDrawer extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      onContactsPressed?.call();
+                      Navigator.of(context).pop();
+                    },
                     child: AppText(
                       content: 'contacts'.i18n(),
                       textStyle: AppTextStyles.boldTextStyle.copyWith(

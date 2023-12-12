@@ -47,8 +47,12 @@ class _HomePageState extends State<HomePage> {
           loaded: (userInfoEntity) {
             return AppBasePage(
               appNavigationDrawer: AppNavigationDrawer(
-                onAboutPressed: () => context.router
-                    .push(AboutRoute(userInfoEntity: userInfoEntity)),
+                onAboutPressed: () => context.router.push(
+                  AboutRoute(userInfoEntity: userInfoEntity),
+                ),
+                onContactsPressed: () => context.router.push(
+                  ContactsRoute(userInfoEntity: userInfoEntity),
+                ),
               ),
               appBar: AppBar(
                 elevation: 0,
