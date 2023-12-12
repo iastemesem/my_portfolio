@@ -53,6 +53,9 @@ class _HomePageState extends State<HomePage> {
                 onContactsPressed: () => context.router.push(
                   ContactsRoute(userInfoEntity: userInfoEntity),
                 ),
+                onSkillsPressed: () => context.router.push(
+                  SkillsRoute(userInfoEntity: userInfoEntity),
+                ),
               ),
               appBar: AppBar(
                 elevation: 0,

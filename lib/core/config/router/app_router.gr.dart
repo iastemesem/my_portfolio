@@ -41,6 +41,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomePage(),
       );
     },
+    SkillsRoute.name: (routeData) {
+      final args = routeData.argsAs<SkillsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SkillsPage(
+          key: args.key,
+          userInfoEntity: args.userInfoEntity,
+        ),
+      );
+    },
   };
 }
 
@@ -131,4 +141,41 @@ class HomeRoute extends PageRouteInfo<void> {
   static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SkillsPage]
+class SkillsRoute extends PageRouteInfo<SkillsRouteArgs> {
+  SkillsRoute({
+    Key? key,
+    required UserInfoEntity userInfoEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SkillsRoute.name,
+          args: SkillsRouteArgs(
+            key: key,
+            userInfoEntity: userInfoEntity,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SkillsRoute';
+
+  static const PageInfo<SkillsRouteArgs> page = PageInfo<SkillsRouteArgs>(name);
+}
+
+class SkillsRouteArgs {
+  const SkillsRouteArgs({
+    this.key,
+    required this.userInfoEntity,
+  });
+
+  final Key? key;
+
+  final UserInfoEntity userInfoEntity;
+
+  @override
+  String toString() {
+    return 'SkillsRouteArgs{key: $key, userInfoEntity: $userInfoEntity}';
+  }
 }

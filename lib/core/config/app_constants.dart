@@ -8,4 +8,8 @@ class AppConstants {
   static const String facebookKey = 'facebook';
   static const String twitterKey = 'twitter';
   static const String instagramKey = 'instagram';
+
+  ///Rating
+  static const int minRating = 0;
+  static const int maxRating = 10;
 }
