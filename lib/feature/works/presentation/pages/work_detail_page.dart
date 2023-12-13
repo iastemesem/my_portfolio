@@ -22,6 +22,7 @@ class WorkDetailPage extends StatelessWidget {
     return AppBasePage(
       appBar: AppBar(
         elevation: 0,
+        centerTitle: true,
         primary: true,
         title: Hero(
           tag: '${projectEntity.name}_titleHero',

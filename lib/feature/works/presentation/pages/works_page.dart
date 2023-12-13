@@ -24,6 +24,7 @@ class WorksPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         primary: true,
+        centerTitle: true,
         title: AppText(
           content: 'work'.i18n(),
           textStyle: Theme.of(context).textTheme.titleMedium,

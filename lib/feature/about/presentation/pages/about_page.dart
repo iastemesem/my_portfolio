@@ -23,6 +23,7 @@ class AboutPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         primary: true,
+        centerTitle: true,
         title: AppText(
           content: 'about'.i18n(),
           textStyle: Theme.of(context).textTheme.titleMedium,
