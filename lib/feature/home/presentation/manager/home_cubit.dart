@@ -32,7 +32,7 @@ class HomeCubit extends Cubit<HomeState> implements AppBaseCubit<HomeState> {
 
   @override
   void emitError(FailureEntity? failureEntity, HomeState oldState) {
-    //empty
+    emit(const HomeState.initial());
   }
 
   @override
