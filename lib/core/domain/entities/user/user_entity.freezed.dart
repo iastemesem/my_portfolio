@@ -375,6 +375,7 @@ abstract class _UserInfoEntity implements UserInfoEntity {
 mixin _$UserProjectEntity {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String get briefDescription => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   List<String> get technologies => throw _privateConstructorUsedError;
@@ -393,6 +394,7 @@ abstract class $UserProjectEntityCopyWith<$Res> {
   $Res call(
       {String name,
       String description,
+      String briefDescription,
       String url,
       String imageUrl,
       List<String> technologies});
@@ -413,6 +415,7 @@ class _$UserProjectEntityCopyWithImpl<$Res, $Val extends UserProjectEntity>
   $Res call({
     Object? name = null,
     Object? description = null,
+    Object? briefDescription = null,
     Object? url = null,
     Object? imageUrl = null,
     Object? technologies = null,
@@ -425,6 +428,10 @@ class _$UserProjectEntityCopyWithImpl<$Res, $Val extends UserProjectEntity>
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      briefDescription: null == briefDescription
+          ? _value.briefDescription
+          : briefDescription // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
           ? _value.url
@@ -453,6 +460,7 @@ abstract class _$$UserProjectEntityImplCopyWith<$Res>
   $Res call(
       {String name,
       String description,
+      String briefDescription,
       String url,
       String imageUrl,
       List<String> technologies});
@@ -471,6 +479,7 @@ class __$$UserProjectEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? description = null,
+    Object? briefDescription = null,
     Object? url = null,
     Object? imageUrl = null,
     Object? technologies = null,
@@ -483,6 +492,10 @@ class __$$UserProjectEntityImplCopyWithImpl<$Res>
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      briefDescription: null == briefDescription
+          ? _value.briefDescription
+          : briefDescription // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
           ? _value.url
@@ -506,6 +519,7 @@ class _$UserProjectEntityImpl implements _UserProjectEntity {
   const _$UserProjectEntityImpl(
       {required this.name,
       required this.description,
+      required this.briefDescription,
       required this.url,
       required this.imageUrl,
       required final List<String> technologies})
@@ -515,6 +529,8 @@ class _$UserProjectEntityImpl implements _UserProjectEntity {
   final String name;
   @override
   final String description;
+  @override
+  final String briefDescription;
   @override
   final String url;
   @override
@@ -529,7 +545,7 @@ class _$UserProjectEntityImpl implements _UserProjectEntity {
 
   @override
   String toString() {
-    return 'UserProjectEntity(name: $name, description: $description, url: $url, imageUrl: $imageUrl, technologies: $technologies)';
+    return 'UserProjectEntity(name: $name, description: $description, briefDescription: $briefDescription, url: $url, imageUrl: $imageUrl, technologies: $technologies)';
   }
 
   @override
@@ -540,6 +556,8 @@ class _$UserProjectEntityImpl implements _UserProjectEntity {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.briefDescription, briefDescription) ||
+                other.briefDescription == briefDescription) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
@@ -548,7 +566,13 @@ class _$UserProjectEntityImpl implements _UserProjectEntity {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, url, imageUrl,
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      description,
+      briefDescription,
+      url,
+      imageUrl,
       const DeepCollectionEquality().hash(_technologies));
 
   @JsonKey(ignore: true)
@@ -563,6 +587,7 @@ abstract class _UserProjectEntity implements UserProjectEntity {
   const factory _UserProjectEntity(
       {required final String name,
       required final String description,
+      required final String briefDescription,
       required final String url,
       required final String imageUrl,
       required final List<String> technologies}) = _$UserProjectEntityImpl;
@@ -571,6 +596,8 @@ abstract class _UserProjectEntity implements UserProjectEntity {
   String get name;
   @override
   String get description;
+  @override
+  String get briefDescription;
   @override
   String get url;
   @override

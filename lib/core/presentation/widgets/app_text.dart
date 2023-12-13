@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/core/config/app_text_styles.dart';
 
 class AppText extends StatelessWidget {
   final String content;
@@ -15,7 +14,7 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       content,
-      style: textStyle ?? AppTextStyles.regularTextStyle,
+      style: textStyle ?? Theme.of(context).textTheme.bodySmall,
     );
   }
 }

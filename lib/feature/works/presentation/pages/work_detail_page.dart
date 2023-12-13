@@ -1,21 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/domain/entities/user/user_entity.dart';
-import 'package:my_portfolio/feature/contacts/presentation/widgets/contacts_body_widget.dart';
+import 'package:my_portfolio/feature/works/presentation/widgets/work_detail_body_widget.dart';
 
 import '../../../../core/config/app_colors.dart';
 import '../../../../core/presentation/pages/app_base_page.dart';
 import '../../../../core/presentation/widgets/app_text.dart';
 
 @RoutePage()
-class ContactsPage extends StatelessWidget {
-  final UserInfoEntity userInfoEntity;
+class WorkDetailPage extends StatelessWidget {
+  final UserProjectEntity projectEntity;
 
-  const ContactsPage({
+  const WorkDetailPage({
     super.key,
-    required this.userInfoEntity,
+    required this.projectEntity,
   });
 
   @override
@@ -24,9 +23,12 @@ class ContactsPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         primary: true,
-        title: AppText(
-          content: 'contacts'.i18n(),
-          textStyle: Theme.of(context).textTheme.titleMedium,
+        title: Hero(
+          tag: '${projectEntity.name}_titleHero',
+          child: AppText(
+            content: projectEntity.name,
+            textStyle: Theme.of(context).textTheme.titleMedium,
+          ),
         ),
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.primary,
@@ -43,8 +45,8 @@ class ContactsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: ContactsBodyWidget(
-        userInfoEntity: userInfoEntity,
+      body: WorkDetailBodyWidget(
+        projectEntity: projectEntity,
       ),
     );
   }

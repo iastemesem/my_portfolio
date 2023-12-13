@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
-import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/domain/entities/user/user_entity.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_button.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
@@ -48,9 +47,7 @@ class AboutBodyWidget extends StatelessWidget {
                   child: AppText(
                     content:
                         '${userInfoEntity.name.substring(0, 1)} ${userInfoEntity.surname.substring(0, 1)}',
-                    textStyle: AppTextStyles.boldTextStyle.copyWith(
-                      fontSize: 72,
-                    ),
+                    textStyle: Theme.of(context).textTheme.titleLarge,
                   ),
                 );
               },
@@ -78,8 +75,7 @@ class AboutBodyWidget extends StatelessWidget {
               ),
               child: AppText(
                 content: userInfoEntity.longDescription,
-                textStyle:
-                    AppTextStyles.regularTextStyle.copyWith(fontSize: 18),
+                textStyle: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),
@@ -97,7 +93,7 @@ class AboutBodyWidget extends StatelessWidget {
                     launchUrl(
                       Uri(
                         scheme: 'mailto',
-                        path: 'gianfrancolucci@gmail.com',
+                        path: userInfoEntity.mail,
                       ),
                     );
                   },

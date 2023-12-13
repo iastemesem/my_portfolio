@@ -30,6 +30,7 @@ class UserProjectResponse with _$UserProjectResponse {
   const factory UserProjectResponse({
     @Default('') String name,
     @Default('') String description,
+    @Default('') String briefDescription,
     @Default('') String url,
     @Default('') String image,
     @Default([]) List<String> technologies,

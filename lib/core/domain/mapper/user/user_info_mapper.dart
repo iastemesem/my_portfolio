@@ -40,6 +40,7 @@ class UserProjectsMapper
     return UserProjectEntity(
       name: data.name,
       description: data.description,
+      briefDescription: data.briefDescription,
       url: data.url,
       imageUrl: data.image,
       technologies: data.technologies,

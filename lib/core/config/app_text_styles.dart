@@ -15,15 +15,6 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
-  TextStyle customBoldTextStyle(
-    double? fontSize,
-    Color? color,
-  ) =>
-      boldTextStyle.copyWith(
-        fontSize: fontSize,
-        color: color ?? AppColors.secondary,
-      );
-
   ///regular
   static TextStyle regularTextStyle = _baseTextStyle.copyWith(
     height: 0,
@@ -31,28 +22,10 @@ class AppTextStyles {
     fontStyle: FontStyle.normal,
   );
 
-  TextStyle customRegularTextStyle(
-    double? fontSize,
-    Color? color,
-  ) =>
-      regularTextStyle.copyWith(
-        fontSize: fontSize,
-        color: color ?? AppColors.secondary,
-      );
-
   ///italic
   static TextStyle italicTextStyle = _baseTextStyle.copyWith(
     height: 0,
     color: AppColors.secondary,
     fontStyle: FontStyle.italic,
   );
-
-  TextStyle customItalicTextStyle(
-    double? fontSize,
-    Color? color,
-  ) =>
-      italicTextStyle.copyWith(
-        fontSize: fontSize,
-        color: color ?? AppColors.secondary,
-      );
 }

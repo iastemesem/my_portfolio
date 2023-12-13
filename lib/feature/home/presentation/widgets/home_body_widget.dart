@@ -3,7 +3,6 @@ import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/domain/entities/user/user_entity.dart';
 
 import '../../../../core/config/app_assets.dart';
-import '../../../../core/config/app_text_styles.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   final UserInfoEntity userInfoEntity;
@@ -24,16 +23,18 @@ class HomeBodyWidget extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'briefDescription'.i18n(),
-                style: AppTextStyles.boldTextStyle.copyWith(
-                  fontSize: 42,
-                  letterSpacing: 2,
-                ),
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontSize: 42,
+                      letterSpacing: 2,
+                    ),
                 children: [
                   TextSpan(
                     text: '${userInfoEntity.name}.\n',
-                    style: AppTextStyles.boldTextStyle.copyWith(
-                      fontStyle: FontStyle.italic,
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontSize: 42,
+                          letterSpacing: 2,
+                          fontStyle: FontStyle.italic,
+                        ),
                   ),
                   TextSpan(text: userInfoEntity.briefDescription)
                 ],

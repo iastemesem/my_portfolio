@@ -41,6 +41,7 @@ _$UserProjectResponseImpl _$$UserProjectResponseImplFromJson(
     _$UserProjectResponseImpl(
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
+      briefDescription: json['briefDescription'] as String? ?? '',
       url: json['url'] as String? ?? '',
       image: json['image'] as String? ?? '',
       technologies: (json['technologies'] as List<dynamic>?)

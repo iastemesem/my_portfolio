@@ -219,6 +219,7 @@ UserProjectResponse _$UserProjectResponseFromJson(Map<String, dynamic> json) {
 mixin _$UserProjectResponse {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String get briefDescription => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   List<String> get technologies => throw _privateConstructorUsedError;
@@ -230,6 +231,7 @@ class _$UserProjectResponseImpl implements _UserProjectResponse {
   const _$UserProjectResponseImpl(
       {this.name = '',
       this.description = '',
+      this.briefDescription = '',
       this.url = '',
       this.image = '',
       final List<String> technologies = const []})
@@ -244,6 +246,9 @@ class _$UserProjectResponseImpl implements _UserProjectResponse {
   @override
   @JsonKey()
   final String description;
+  @override
+  @JsonKey()
+  final String briefDescription;
   @override
   @JsonKey()
   final String url;
@@ -261,7 +266,7 @@ class _$UserProjectResponseImpl implements _UserProjectResponse {
 
   @override
   String toString() {
-    return 'UserProjectResponse(name: $name, description: $description, url: $url, image: $image, technologies: $technologies)';
+    return 'UserProjectResponse(name: $name, description: $description, briefDescription: $briefDescription, url: $url, image: $image, technologies: $technologies)';
   }
 
   @override
@@ -272,6 +277,8 @@ class _$UserProjectResponseImpl implements _UserProjectResponse {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            (identical(other.briefDescription, briefDescription) ||
+                other.briefDescription == briefDescription) &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.image, image) || other.image == image) &&
             const DeepCollectionEquality()
@@ -280,7 +287,13 @@ class _$UserProjectResponseImpl implements _UserProjectResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, url, image,
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      description,
+      briefDescription,
+      url,
+      image,
       const DeepCollectionEquality().hash(_technologies));
 }
 
@@ -288,6 +301,7 @@ abstract class _UserProjectResponse implements UserProjectResponse {
   const factory _UserProjectResponse(
       {final String name,
       final String description,
+      final String briefDescription,
       final String url,
       final String image,
       final List<String> technologies}) = _$UserProjectResponseImpl;
@@ -299,6 +313,8 @@ abstract class _UserProjectResponse implements UserProjectResponse {
   String get name;
   @override
   String get description;
+  @override
+  String get briefDescription;
   @override
   String get url;
   @override

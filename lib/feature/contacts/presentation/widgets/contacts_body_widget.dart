@@ -3,10 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
 import 'package:my_portfolio/core/config/app_constants.dart';
-import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/domain/entities/user/user_entity.dart';
-import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:my_portfolio/feature/contacts/presentation/widgets/contact_box_widget.dart';
 
 class ContactsBodyWidget extends StatelessWidget {
   final UserInfoEntity userInfoEntity;
@@ -65,127 +63,66 @@ class ContactsBodyWidget extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            _buildItemCardWidget(
-              'callMe'.i18n(),
-              userInfoEntity.phone,
-              FontAwesomeIcons.phone,
-              AppColors.accent,
-              Uri(scheme: 'tel', path: userInfoEntity.phone),
+            ContactBoxWidget(
+              text: 'callMe'.i18n(),
+              subText: userInfoEntity.phone,
+              icon: FontAwesomeIcons.phone,
+              color: AppColors.accent,
+              uri: Uri(scheme: 'tel', path: userInfoEntity.phone),
             ),
-            _buildItemCardWidget(
-              'mailMe'.i18n(),
-              userInfoEntity.mail,
-              FontAwesomeIcons.reply,
-              AppColors.accent,
-              Uri(scheme: 'mailto', path: userInfoEntity.mail),
+            ContactBoxWidget(
+              text: 'mailMe'.i18n(),
+              subText: userInfoEntity.mail,
+              icon: FontAwesomeIcons.reply,
+              color: AppColors.accent,
+              uri: Uri(scheme: 'mailto', path: userInfoEntity.mail),
             ),
             linkedInContactEntity != null
-                ? _buildItemCardWidget(
-                    'LinkedIn',
-                    linkedInContactEntity.url,
-                    FontAwesomeIcons.linkedinIn,
-                    AppColors.accent,
-                    Uri(scheme: 'https', path: linkedInContactEntity.url),
+                ? ContactBoxWidget(
+                    text: 'LinkedIn',
+                    subText: linkedInContactEntity.url,
+                    icon: FontAwesomeIcons.linkedinIn,
+                    color: AppColors.accent,
+                    uri: Uri(scheme: 'https', path: linkedInContactEntity.url),
                   )
                 : const SizedBox.shrink(),
             githubContactEntity != null
-                ? _buildItemCardWidget(
-                    'GitHub',
-                    githubContactEntity.url,
-                    FontAwesomeIcons.github,
-                    AppColors.accent,
-                    Uri(scheme: 'https', path: githubContactEntity.url),
+                ? ContactBoxWidget(
+                    text: 'GitHub',
+                    subText: githubContactEntity.url,
+                    icon: FontAwesomeIcons.github,
+                    color: AppColors.accent,
+                    uri: Uri(scheme: 'https', path: githubContactEntity.url),
                   )
                 : const SizedBox.shrink(),
             facebookContactEntity != null
-                ? _buildItemCardWidget(
-                    'Facebook',
-                    facebookContactEntity.url,
-                    FontAwesomeIcons.facebook,
-                    AppColors.accent,
-                    Uri(scheme: 'https', path: facebookContactEntity.url),
+                ? ContactBoxWidget(
+                    text: 'Facebook',
+                    subText: facebookContactEntity.url,
+                    icon: FontAwesomeIcons.facebook,
+                    color: AppColors.accent,
+                    uri: Uri(scheme: 'https', path: facebookContactEntity.url),
                   )
                 : const SizedBox.shrink(),
             instagramContactEntity != null
-                ? _buildItemCardWidget(
-                    'Instagram',
-                    instagramContactEntity.url,
-                    FontAwesomeIcons.instagram,
-                    AppColors.accent,
-                    Uri(scheme: 'https', path: instagramContactEntity.url),
+                ? ContactBoxWidget(
+                    text: 'Instagram',
+                    subText: instagramContactEntity.url,
+                    icon: FontAwesomeIcons.instagram,
+                    color: AppColors.accent,
+                    uri: Uri(scheme: 'https', path: instagramContactEntity.url),
                   )
                 : const SizedBox.shrink(),
             twitterContactEntity != null
-                ? _buildItemCardWidget(
-                    'X',
-                    twitterContactEntity.url,
-                    FontAwesomeIcons.xTwitter,
-                    AppColors.accent,
-                    Uri(scheme: 'https', path: twitterContactEntity.url),
+                ? ContactBoxWidget(
+                    text: 'X',
+                    subText: twitterContactEntity.url,
+                    icon: FontAwesomeIcons.xTwitter,
+                    color: AppColors.accent,
+                    uri: Uri(scheme: 'https', path: twitterContactEntity.url),
                   )
                 : const SizedBox.shrink(),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildItemCardWidget(
-    String text,
-    String subText,
-    IconData icon,
-    Color color,
-    Uri uri,
-  ) {
-    return InkWell(
-      onTap: () async {
-        if (await canLaunchUrl(uri)) {
-          await launchUrl(uri, mode: LaunchMode.externalApplication);
-        }
-      },
-      child: Card(
-        color: AppColors.gray,
-        shape: RoundedRectangleBorder(
-          side: BorderSide(
-            color: color.withOpacity(0.5),
-            style: BorderStyle.solid,
-          ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(25),
-          ),
-        ),
-        elevation: 2,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 20.0,
-            horizontal: 12,
-          ),
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                color: color,
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AppText(
-                      content: text,
-                      textStyle: AppTextStyles.boldTextStyle.copyWith(
-                        fontSize: 18,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    AppText(content: subText),
-                  ],
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:localization/localization.dart';
 import 'package:my_portfolio/core/config/app_assets.dart';
+import 'package:my_portfolio/core/config/app_colors.dart';
+import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/config/di/provider.dart' as di;
 import 'package:my_portfolio/core/config/router/app_router.dart';
 import 'package:my_portfolio/feature/home/presentation/manager/home_cubit.dart';
@@ -35,6 +37,26 @@ class MyApp extends StatelessWidget {
             )
           ],
           child: MaterialApp.router(
+            theme: ThemeData(
+              useMaterial3: true,
+              colorScheme: ColorScheme.fromSeed(
+                  seedColor: AppColors.primary, brightness: Brightness.dark),
+              textTheme: TextTheme(
+                titleMedium: AppTextStyles.boldTextStyle.copyWith(
+                  fontSize: 32,
+                ),
+                titleLarge: AppTextStyles.boldTextStyle.copyWith(
+                  fontSize: 72,
+                ),
+                titleSmall: AppTextStyles.boldTextStyle.copyWith(
+                  fontSize: 18,
+                ),
+                bodySmall: AppTextStyles.regularTextStyle,
+                bodyMedium: AppTextStyles.regularTextStyle.copyWith(
+                  fontSize: 18,
+                ),
+              ),
+            ),
             localizationsDelegates: [
               LocalJsonLocalization.delegate,
             ],

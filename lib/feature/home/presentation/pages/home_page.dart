@@ -56,6 +56,9 @@ class _HomePageState extends State<HomePage> {
                 onSkillsPressed: () => context.router.push(
                   SkillsRoute(userInfoEntity: userInfoEntity),
                 ),
+                onWorksPressed: () => context.router.push(
+                  WorksRoute(userInfoEntity: userInfoEntity),
+                ),
               ),
               appBar: AppBar(
                 elevation: 0,

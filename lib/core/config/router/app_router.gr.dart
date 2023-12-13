@@ -51,6 +51,26 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    WorkDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<WorkDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WorkDetailPage(
+          key: args.key,
+          projectEntity: args.projectEntity,
+        ),
+      );
+    },
+    WorksRoute.name: (routeData) {
+      final args = routeData.argsAs<WorksRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WorksPage(
+          key: args.key,
+          userInfoEntity: args.userInfoEntity,
+        ),
+      );
+    },
   };
 }
 
@@ -177,5 +197,80 @@ class SkillsRouteArgs {
   @override
   String toString() {
     return 'SkillsRouteArgs{key: $key, userInfoEntity: $userInfoEntity}';
+  }
+}
+
+/// generated route for
+/// [WorkDetailPage]
+class WorkDetailRoute extends PageRouteInfo<WorkDetailRouteArgs> {
+  WorkDetailRoute({
+    Key? key,
+    required UserProjectEntity projectEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
+          WorkDetailRoute.name,
+          args: WorkDetailRouteArgs(
+            key: key,
+            projectEntity: projectEntity,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'WorkDetailRoute';
+
+  static const PageInfo<WorkDetailRouteArgs> page =
+      PageInfo<WorkDetailRouteArgs>(name);
+}
+
+class WorkDetailRouteArgs {
+  const WorkDetailRouteArgs({
+    this.key,
+    required this.projectEntity,
+  });
+
+  final Key? key;
+
+  final UserProjectEntity projectEntity;
+
+  @override
+  String toString() {
+    return 'WorkDetailRouteArgs{key: $key, projectEntity: $projectEntity}';
+  }
+}
+
+/// generated route for
+/// [WorksPage]
+class WorksRoute extends PageRouteInfo<WorksRouteArgs> {
+  WorksRoute({
+    Key? key,
+    required UserInfoEntity userInfoEntity,
+    List<PageRouteInfo>? children,
+  }) : super(
+          WorksRoute.name,
+          args: WorksRouteArgs(
+            key: key,
+            userInfoEntity: userInfoEntity,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'WorksRoute';
+
+  static const PageInfo<WorksRouteArgs> page = PageInfo<WorksRouteArgs>(name);
+}
+
+class WorksRouteArgs {
+  const WorksRouteArgs({
+    this.key,
+    required this.userInfoEntity,
+  });
+
+  final Key? key;
+
+  final UserInfoEntity userInfoEntity;
+
+  @override
+  String toString() {
+    return 'WorksRouteArgs{key: $key, userInfoEntity: $userInfoEntity}';
   }
 }

@@ -5,6 +5,8 @@ import '../../../feature/about/presentation/pages/about_page.dart';
 import '../../../feature/contacts/presentation/pages/contacts_page.dart';
 import '../../../feature/home/presentation/pages/home_page.dart';
 import '../../../feature/skills/presentation/pages/skills_page.dart';
+import '../../../feature/works/presentation/pages/work_detail_page.dart';
+import '../../../feature/works/presentation/pages/works_page.dart';
 import '../../domain/entities/user/user_entity.dart';
 
 part 'app_router.gr.dart';
@@ -20,6 +22,14 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: AboutRoute.page,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: WorksRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: WorkDetailRoute.page,
+          transitionsBuilder: TransitionsBuilders.zoomIn,
         ),
         CustomRoute(
           page: SkillsRoute.page,

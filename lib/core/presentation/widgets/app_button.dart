@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/config/app_colors.dart';
-import 'package:my_portfolio/core/config/app_text_styles.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
 
 class AppButton extends StatelessWidget {
@@ -42,9 +41,7 @@ class AppButton extends StatelessWidget {
           ),
           child: AppText(
             content: text,
-            textStyle: AppTextStyles.boldTextStyle.copyWith(
-              fontSize: 22,
-            ),
+            textStyle: Theme.of(context).textTheme.titleSmall,
           ),
         ),
       ),

@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:my_portfolio/core/config/app_text_styles.dart';
+import 'package:flutter/material.dart';
 import 'package:my_portfolio/core/domain/entities/user/user_entity.dart';
 import 'package:my_portfolio/core/presentation/widgets/app_text.dart';
 import 'package:my_portfolio/feature/skills/presentation/widgets/skill_bar_widget.dart';
@@ -24,9 +23,7 @@ class SkillsBodyWidget extends StatelessWidget {
                 children: [
                   AppText(
                     content: skill.name,
-                    textStyle: AppTextStyles.boldTextStyle.copyWith(
-                      fontSize: 20,
-                    ),
+                    textStyle: Theme.of(context).textTheme.titleSmall,
                   ),
                   const SizedBox(
                     height: 8,
